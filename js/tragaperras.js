@@ -3,10 +3,18 @@
       var cantidad=imagenes.length; 
       var credito=aleatorioCoin();//desde 8 a diez aleatoria
       var v=aleatorioTiles();//de 0 a 6 diez aleatoria
-      var boton=document.getElementById("b0");
+      //var boton=document.getElementById("b0");
+      //console.log(boton);
       var mp3;
       tiles=document.getElementsByClassName("ventana");
-      //console.log(tiles);      
+      // variables cuenta atrás
+      var time = 20;
+      console.log(time);
+      var timeSecons = time;
+      console.log(timeSecons);
+      var timeMinuts = Math.floor(time/60);
+      console.log(timeMinuts);
+       
 
 function inici(){        
 	       		//eventos tirar - volver a tirar
@@ -22,11 +30,34 @@ function inici(){
 	       		document.getElementById("monedas").innerHTML+=`<img src="img/moneda.png">`;
 	   			}
 	   			document.getElementById("cuadro_mensaje").onclick=ocultar;
+	   			//cuenta atrás cada segundo
+	   			document.getElementById("count").innerHTML=`${timeMinuts}:${timeSecons%60}`;
+	   			startCounDown();
+}
+
+//inicio cuenta atrás
+function startCounDown(){
+setInterval(countDown,1000);
+}
+
+//Función para la cuenta atrás
+function countDown(){
+	if(timeSecons>0){
+	let minutes = Math.floor(timeSecons/60);
+	let secons = timeSecons % 60;
+	console.log(minutes);
+	console.log(secons);
+	document.getElementById("count").innerHTML=`${minutes}:${secons}`;
+	timeSecons--;
+	}
+	else{
+		count.innerHTML= `Sin tiempo`;
+	}
 }
 
 //Acción del botón tirar: Si hay crédito Genera imagenes - resta monedas  y verifica premio
 function tirar(){	
-				if (credito>0){
+				if (credito>0 && timeSecons>0){
 				// tiene que haber crédito div id="dinero"si credito es 0 no va
 				//tres imagenes al azar
 				//si son iguales las 3 premio aleatorio nºmonedas con musica.
@@ -60,7 +91,7 @@ function tirar(){
 }
 
 	function volvertirarb0(){
-					if (credito>0){
+					if (credito>0 && timeSecons>0){
 					sonar2();
 					credito--
 					document.getElementById("dinero").innerHTML=credito;
@@ -84,7 +115,7 @@ function tirar(){
 	}	
 
 	function volvertirarb1(){
-					if (credito>0){
+					if (credito>0 && timeSecons>0){
 					sonar2();
 					credito--
 					document.getElementById("dinero").innerHTML=credito;
@@ -109,7 +140,7 @@ function tirar(){
 	}	
 
 function volvertirarb2(){
-				if (credito>0){
+				if (credito>0 && timeSecons>0){
 				sonar2();
 				credito--
 				document.getElementById("dinero").innerHTML=credito;

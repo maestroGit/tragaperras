@@ -65,6 +65,12 @@
             font-size:5em;
             line-height:30px;
           }
+
+          #count{
+            font-size:2em;
+            color:red;
+          }
+
           #lanzar{
             cursor:pointer;
             padding:15px 18px 15px 10px;
