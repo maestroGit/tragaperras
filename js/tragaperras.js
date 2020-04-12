@@ -8,7 +8,7 @@
       var mp3;
       tiles=document.getElementsByClassName("ventana");
       // variables cuenta atrás
-      var time = 20;
+      var time = 10;
       console.log(time);
       var timeSecons = time;
       console.log(timeSecons);
@@ -232,6 +232,7 @@ function ocultar(){
 
 function reload(){
 					location.reload();
+
 }
 
 

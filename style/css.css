@@ -1,6 +1,6 @@
  body{
             margin:auto;
-            font-family: 'Pacifico', cursive;
+            font-family: 'Montserrat', cursive;
           }
           img{
             max-width:100%;
@@ -46,7 +46,7 @@
             user-select:none;
             -moz-user-select:none;
           }
-          .boton:hover,#lanzar:hover{
+          .boton:hover,#lanzar:hover, #btn_reload:hover{
             background-color:white;
             box-shadow:0 0 13px crimson inset;
           }
@@ -79,7 +79,7 @@
             width:180px;
             height:180px;
             border-radius:50%;
-            border:6px solid crimson;
+            border:4px solid crimson;
             text-align:center;
             font-size:3.9em;
             line-height:140px;
@@ -89,7 +89,7 @@
             right:0;
             background-color:#fff0c9;
             margin:auto;
-            top:1px;
+            top:-15px;
             box-sizing:border-box;
           }
           .euros{
@@ -153,10 +153,11 @@
           }
 
           #btn_reload{
+            width:180px;
             background-color:crimson;
             border: 6px solid #fff0c9;
-            border-radius: 50%;
-            color: #fff0c9;
+            border-radius: 1%;
+            color: darkgreen;
             padding: 20px;
             text-align: center;
             text-decoration: none;
